@@ -73,6 +73,8 @@ lstm-stock-prediction/
 
 ### Interpretation
 
+Across most configurations, predictions exhibit a visible lag relative to actual prices — the model tends to track recent values rather than anticipate directional changes, a common failure mode in short-window LSTM setups caused by high autocorrelation in daily closing prices. The AMD baseline is the exception, tracking actual values closely even through high-volatility periods.
+
 The baseline model outperformed the modified, more complex architecture on both tickers. A few likely reasons:
 
 - **Long training history**: each dataset spans 30+ years, giving even a simple single-layer LSTM enough data to learn the underlying trend without needing extra capacity.
